@@ -4,12 +4,13 @@ class Utilisateur(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
-    mdp 
+    mdp = db.Column(db.String(255), nullable=False, unique=True)
 
     def to_dict(self):
         return {
             'id': self.id,
             'utilisateur_id': self.nom,
+            'mdp' : self.mdp,
             'timestamp': self.email
         }
     
